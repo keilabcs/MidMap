@@ -1,0 +1,345 @@
+\documentclass{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,english,portuguese]{babel}
+
+\usetheme{Boadilla}
+\usecolortheme{beaver}
+
+%%%%%%%%%% CRONOGRAMA DE ATIVIDADE %%%%%%%%%%%%%%%
+\usepackage{pgfgantt} % Fazer Cronograma Gantt	
+\usepackage{graphicx} 
+%%%%%%%%%%%%%%%%%5%%%%%%%%%%%%%%%5%%%%%%%%%%%%%%%%	
+
+\usepackage{natbib}
+\usepackage{placeins} % Forçar Tabela/Figura fica abaixo do texto
+
+%%%%%% MAPA MENTAL %%%%%%%%
+\usepackage{tikz,times}
+\usetikzlibrary{positioning,shadows.blur}
+\usepackage{verbatim}
+\usepackage{geometry}
+\usetikzlibrary{mindmap,trees,backgrounds,shadows}
+
+
+\definecolor{color_mate}{RGB}{255,255,128}
+\definecolor{color_plas}{RGB}{255,128,255}
+\definecolor{color_text}{RGB}{128,255,255}
+\definecolor{color_petr}{RGB}{255,192,192}
+\definecolor{color_made}{RGB}{192,255,192}
+\definecolor{color_meta}{RGB}{192,192,255}
+%%%%5%%%%%%%%%%%%%%%%%%%%%%5%
+
+%%5%%%%%%%%%%%%%%%%%%%%%%%%%%%5%%%%%
+\title{Seminários em Modelagem Computacional de Conhecimento}
+\author{Keila Barbosa Costa dos Santos}
+\institute{Programa de Pós-Graduação em Modelagem Computacional do Conhecimento \\
+  Universidade Federal de Alagoas}
+
+\begin{document}
+
+%%5%%%%%%%%%%%%%%%%%%%%%%%%%%%5%%%%% (1)
+\begin{frame}
+  \titlepage
+\end{frame}
+%%5%%%%%%%%%%%%%%%%%%%%%%%%%%%5%%%%%
+
+%%5%%%%%%%%%%%%%%%%%%%%%%%%%%%5%%%%% (2)
+\begin{frame}
+
+\begin{block}{}
+Linha de Pesquisa: Modelos Quantitativos e de Simulação.
+\end{block}
+
+\begin{block}{}
+Título: Análise Bibliométrica de Currículos Lattes.
+\end{block}
+
+\begin{block}{}
+Orientador: Alejandro C. Frery
+\end{block}
+
+\end{frame}
+%%5%%%%%%%%%%%%%%%%%%%%%%%%%%%5%%%%%
+
+%%5%%%%%%%%%%%%%%%%%%%%%%%%%%%5%%%%% (3)
+\begin{frame}{Definição de Bibliometria}
+
+\begin{block}{}
+A bibliometria é um campo das áreas da biblioteconomia e da ciência da informação que aplica métodos estatísticos e matemáticos para analisar e construir indicadores sobre a dinâmica e evolução da informação científica e tecnológica de determinadas disciplinas, áreas, organizações ou países.
+\end{block}
+
+\begin{block}{}
+Bibliometria é aplicação da matemática e métodos estatísticos para livros e outras mídias de comunicação~\footnote{Pritchard, 1969, p 349.}.
+\end{block}
+
+\end{frame}
+%%5%%%%%%%%%%%%%%%%%%%%%%%%%%%5%%%%%
+
+%%5%%%%%%%%%%%%%%%%%%%%%%%%%%%5%%%%% (4)
+\begin{frame}{Mapa Mental da Área (tikz - mindmap)}
+
+\begin{figure}[!h]
+\begin{center}
+\scalebox{0.45}{ % PS
+\begin{tikzpicture}[every annotation/.style = {draw,fill = white, font = \Large}]
+\path[mindmap,concept color=black!40,text=white,every node/.style={concept,circular drop shadow},
+root/.style    = {concept color=black!40,font=\large\bfseries,text width=10em},
+level 1 concept/.append style={font=\Large\bfseries,sibling angle=90,text width=7.7em,
+level distance=15em,inner sep=0pt},level 2 concept/.append style={font=\bfseries,level distance=9em},
+]
+node[root] {Biblioteconomia \& ciência da Informação} [clockwise from=0]
+      child[concept color=blue!60] {
+ node {Webometria}[clockwise from=90]
+     }
+      child[concept color=blue] {
+ node[concept]{Bibliometria}[clockwise from=-30]
+        child {node[concept color=yellow!60!black] {Prod. Científica}[clockwise from=40]
+          child {node[concept color=yellow!60!black] {Área}[clockwise from=90]
+            child {node[concept color=yellow!60!black] {Com- putação}[clockwise from=30]
+              child {node[concept color=yellow!60!black] {Gênero}}
+             }
+             }
+            child {node[concept] {Disciplinas}}
+            child {node[concept] {Países}}
+            child {node[concept] {Organi- zações}}
+           }
+        child { node[concept] {Prod. de Periódicos}}
+        child { node[concept] {Freq. de Palavras}}
+      }
+      child[concept color=green!40!black] {
+ node[concept]{Informetria}[clockwise from=310]
+      }
+      child[concept color=red] {
+ node[concept]{Cientometria}[clockwise from=270]
+      };
+\end{tikzpicture}
+} % PS
+\end{center}
+\end{figure}
+\end{frame}
+%%5%%%%%%%%%%%%%%%%%%%%%%%%%%%5%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% (5)
+\begin{frame}{Objetivo}
+
+\begin{block}{}
+Medir com base no Lattes o impacto da produção cientifica nos últimos dez anos em função do gênero dos autores na área de Ciência da Computação.
+\end{block}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% (6)
+\begin{frame} {Metodologias}
+
+\begin{block}{Métricas de Produção Bibliográfica}
+\begin{itemize}
+\item \textit{\textcolor{red}{Artigos completos publicados em periódicos}};
+\item Livros publicados/organizados ou edições;
+\item Capítulos de livros publicados;
+\item Textos em jornais de notícias/revistas;
+\item \textit{\textcolor{red}{Trabalhos completos publicados em anais de congressos}};
+\item Resumos expandidos publicados em anais de congressos;
+\item Resumos publicados em anais de congressos;
+\item Artigos aceitos para publicação;
+\item Apresentações de trabalho. 
+\end{itemize}
+\end{block}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% (7)
+\begin{frame} {Metodologias}
+
+\begin{block}{Dados}
+\begin{itemize}
+\item Plataforma Lattes;
+\item Página das Instituições;
+\item Web of Science;
+\item Scopus.
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% (8)
+\begin{frame} {Ferramentas}
+
+\begin{block}{}
+\begin{itemize}
+\item scripLattes - Extração dos dados.
+\end{itemize}
+\end{block}
+
+\begin{block}{}
+\begin{itemize}
+\item Gephi - Análise da Rede.
+\end{itemize}
+\end{block}
+
+\begin{block}{}
+\begin{itemize}
+\item R - Análise dos Dados.
+\end{itemize}
+\end{block}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%5%%%%%%%%%%%%%%%%%%%%%%%%%%%5%%%%% (9)
+% MAPA MENTAL %
+\begin{frame}{Mapa Mental Conceitual (tikz - mindmap)}
+\begin{figure}[!h]
+\begin{center}
+\scalebox{0.36}{ % PS
+\begin{tikzpicture}[mindmap,level 1 concept/.append style={level distance=200,sibling angle=60},extra concept/.append style={text=black}]
+
+% IMPACTO
+\path[mindmap,concept color=color_mate,text=black] node[concept] {Impacto da Produção Científica na Ciência da computação em Função do Gênero}[clockwise from=30]
+  
+    % FATORES DETERMINANTES
+    child[concept color= color_petr] {
+      node[concept, inner sep = 0mm ] {Fatores Determinantes dos Padrões Observados}  [clockwise from=150]
+      child { node[concept] {Cognitivo}}
+      child { node[concept] {Social}}
+      child { node[concept] {Histórico}}
+      child { node[concept] {Geopolítico}}
+      child { node[concept] {Econômico}}
+    }
+    %
+    % FATORES AVALIADOS
+    child[concept color=color_text] {
+      node[concept] {Indicadores Bibliométricos} [clockwise from=60]
+      child { node[concept] {Qualidade Científica}}
+      child { node[concept] {Atividade Científica}}
+      child { node[concept] {Impacto Científico}}
+      child { node[concept] {Associações Temáticas}}
+      }
+    %
+    % ESTADO DA ARTE
+    child[concept color=color_meta] {
+      node[concept] {Estado da Arte}  [clockwise from=30]
+          child { node[concept] {Palavras Chaves}}
+          child { node[concept] {Revisão Cronológica}}
+          child { node[concept] {Revisão Conceitual}}
+    }
+    %
+    % CNPQ
+    child[concept color=color_plas] {
+      node[concept] {CNPq - Plataforma Lattes} [clockwise from=-120]
+      child { node[concept] {Coleta de Dados}} [clockwise from=0]
+          child { node[concept] {Análise de dados}
+          child [concept color=green!40]{ node{R}}}
+          child { node[concept] {Ferramentas}
+          child [concept color=green!40]  { node {ScriptLattes}}
+          child [concept color=green!40]  { node {LattesX}}
+          }
+          child { node[concept] {Tratamento de dados}}
+          }
+    %
+    % ISI - JCR
+    child[concept color=color_made] {
+      node[concept] {Ferramentas Bibliométricas} [clockwise from=-160]
+          child { node[concept] (A) {Scopus}}
+          child { node[concept]     {Web of Science (WoS)}[clockwise from=130]
+          child { node[concept] (D) {JCR}}
+          }
+          child { node[concept] (C) {Google Scholar Metrics}}
+          }
+    %
+    % HIPOTESES
+    child[concept color=orange] {
+      node[concept] {Hipóteses} [clockwise from=150]
+          child { node[concept] {Hº = H e M = Impacto}}
+          child { node[concept] {H1 = Homens Tem Maior Impacto}}
+          child { node[concept] {H2 = Mulheres Tem Maior Impacto}}
+       };
+    
+\begin{pgfonlayer}{background}
+  \draw [left color=blue, right color=green!50!black, draw=white, decorate,decoration=circle connection bar] (A) -- (D);
+  \draw [left color=blue, right color=green!50!black, draw=white, decorate,decoration=circle connection bar] (C) -- (D); 
+\end{pgfonlayer}
+   
+\end{tikzpicture}
+} % PS
+\end{center}
+\end{figure}	
+\end{frame}
+%%5%%%%%%%%%%%%%%%%%%%%%%%%%%%5%%%%%
+
+%%5%%%%%%%%%%%%%%%%%%%%%%%%%%%5%%%%% (10)
+\begin{frame}{Cronograma  de Atividade Diagrama Gantt (pgfgantt)}
+
+\begin{figure}[!h]	
+\scalebox{0.58}{ % PS
+\begin{ganttchart}[y unit title=0.8cm, y unit chart=0.6cm, vgrid,hgrid, title height=0.5, bar/.style={draw,fill=magenta}, bar incomplete/.append style={fill=yellow!50}, bar height=0.75]{1}{24}
+
+ \gantttitle{1 Ano}{12}
+ \gantttitle{2 Ano}{12} \\
+ \gantttitlelist{1,...,12}{1}
+ \gantttitlelist{13,...,24}{1}\\
+ 
+ \ganttbar[progress=70]{Disciplinas Obrigatórias}{1}{06} \\
+ 
+\ganttgroup{Estado da Arte}{1}{21}\\ 
+ 
+\ganttgroup{Planejamento da Observação}{07}{08}\\ 
+
+ \ganttbar{Construção da Amostra}{07}{08}\\ 
+ \ganttbar{Construção das Técnicas}{07}{08}\\ 
+ 
+\ganttgroup{Coleta dos Dados}{09}{11}\\ 
+  
+ \ganttbar{Lattes de Doctors formados 2002-2006}{09}{09}\\
+ \ganttbar{Lattes de Doctors formados 2007-2011}{10}{10}\\ 
+ \ganttbar{Lattes de Doctors formados 2012-2016}{11}{11}\\ 
+ 
+\ganttgroup{Descrição}{12}{15}\\ 
+
+ \ganttbar{Preparação e Tratamento dos Dados}{12}{14}\\ 
+ \ganttbar{Análise dos Resultados}{15}{16}\\
+ 
+\ganttgroup{Interpretação}{16}{21}\\ 
+
+ \ganttbar{Análise Interpretativa}{16}{16}\\ 
+ \ganttbar{Conclusão}{17}{17}\\
+ \ganttbar{Escrita do Relatório Técnico}{18}{18}\\
+ \ganttbar{Elaboração da Dissertação}{19}{21}\\ 
+ 
+\ganttmilestone{Entrega da Dissertação}{22}{22}\\  
+\ganttmilestone{Apresentação de Dissertação}{23}{24}\\ 
+
+%%% Relações %%%%%%%%%%%%
+\ganttlink{elem3}{elem6}
+\ganttlink{elem6}{elem7}
+\ganttlink{elem7}{elem8}
+\ganttlink[link type=dr]{elem8}{elem10}
+\ganttlink{elem10}{elem11}
+\ganttlink{elem11}{elem14}
+\ganttlink{elem14}{elem15}
+\ganttlink{elem15}{elem16}
+\ganttlink{elem16}{elem17}
+\ganttlink{elem17}{elem18}
+
+\ganttlink{elem2}{elem5}
+\ganttlink{elem5}{elem9}
+\ganttlink{elem9}{elem12}
+\ganttlink{elem12}{elem17}
+%%%%%%%%5%%%%%%%%%5%%%%%%%
+\end{ganttchart}
+} % PS
+\end{figure}
+\end{frame}
+%%5%%%%%%%%%%%%%%%%%%%%%%%%%%%5%%%%%
+
+\end{document}
+
+
+
+
+
